@@ -39,6 +39,7 @@ export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const slideRefs = useRef([]);
+  const trackRef = useRef(null);
 
   const totalSlides = slides.length;
 
@@ -55,9 +56,11 @@ export default function Carousel() {
   }, [isPaused, totalSlides]);
 
   useEffect(() => {
+    const track = trackRef.current;
     const currentSlide = slideRefs.current[activeIndex];
-    if (currentSlide) {
-      currentSlide.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    if (track && currentSlide) {
+      const targetLeft = currentSlide.offsetLeft - (track.clientWidth - currentSlide.clientWidth) / 2;
+      track.scrollTo({ left: targetLeft, behavior: 'smooth' });
     }
   }, [activeIndex]);
 
@@ -76,7 +79,7 @@ export default function Carousel() {
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
-          <div className="card-carousel-track">
+          <div className="card-carousel-track" ref={trackRef}>
             {slides.map((slide, index) => (
               <CarouselCard
                 key={slide.title}

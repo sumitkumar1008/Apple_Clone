@@ -1,10 +1,10 @@
 import './Navbar.css';
 
 export default function Navbar() {
-  const appleLogoSrc = '/src/assets/apple-logo.png';
-  const hamburgerIconSrc = '/src/assets/hamburger.png';
-  const searchIconSrc = '/src/assets/search.png';
-  const bagIconSrc = '/src/assets/bag.png';
+  const appleLogoSrc = 'https://res.cloudinary.com/drxoionjq/image/upload/v1775068245/apple-logo_den5de.png';
+  const hamburgerIconSrc = 'https://res.cloudinary.com/drxoionjq/image/upload/q_auto/f_auto/v1775068245/search_axp0eh.png';
+  const searchIconSrc = 'https://res.cloudinary.com/drxoionjq/image/upload/q_auto/f_auto/v1775068245/search_axp0eh.png';
+  const bagIconSrc = 'https://res.cloudinary.com/drxoionjq/image/upload/q_auto/f_auto/v1775068244/bag_tfbs1u.png';
 
   const navItems = [
     {
