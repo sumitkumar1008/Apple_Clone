@@ -1,0 +1,543 @@
+.grid-item {
+  position: relative;
+  height: 690px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  overflow: hidden;
+  padding: 36px 28px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+  background: #f5f5f7;
+}
+
+.grid-item:hover {
+  transform: scale(1.02);
+}
+
+.grid-item-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  z-index: 1;
+}
+
+.grid-item-content {
+  position: relative;
+  z-index: 10;
+  color: #000;
+  text-align: center;
+  width: 100%;
+}
+
+.grid-item.dark {
+  background: #000;
+}
+
+.grid-item.dark .grid-item-content {
+  color: #fff;
+}
+
+.grid-item h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.grid-item p {
+  font-size: 16px;
+  color: #666;
+  margin: 0 0 20px 0;
+  font-weight: 400;
+}
+
+.grid-item.dark p {
+  color: #999;
+}
+
+.grid-item-link {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item-note {
+  display: block;
+  color: #6e6e73;
+  font-size: 16px;
+  margin: 0 0 18px;
+}
+
+.grid-item-cta-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.grid-item-link-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #0071e3;
+  color: #fff;
+  border: 1px solid #0071e3;
+  border-radius: 999px;
+  padding: 12px 26px;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 500;
+}
+
+.grid-item-link-pill-secondary {
+  background: transparent;
+  color: #0071e3;
+}
+
+.grid-item-link:hover {
+  opacity: 0.7;
+}
+
+.grid-item.dark .grid-item-link {
+  color: #0a84ff;
+}
+
+.grid-item-apple50 {
+  background: #f5f5f7;
+}
+
+.grid-item-apple50 .grid-item-image {
+  object-position: center top;
+  width: 96%;
+  height: 92%;
+}
+
+.grid-item-apple50 .grid-item-content {
+  position: absolute;
+  left: 50%;
+  bottom: 26px;
+  transform: translateX(-50%);
+}
+
+.grid-item-apple50 h2 {
+  color: #111;
+  font-size: 68px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+}
+
+.grid-item-apple50 p {
+  color: #111;
+  font-size: 78px;
+  line-height: 0.95;
+  margin: 0 0 20px;
+  font-weight: 500;
+  font-family: 'Segoe Script', 'Lucida Handwriting', cursive;
+}
+
+.grid-item-wwdc {
+  background: #000;
+}
+
+.grid-item-wwdc .grid-item-image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.grid-item-wwdc .grid-item-content {
+  position: absolute;
+  left: 50%;
+  bottom: 34px;
+  transform: translateX(-50%);
+  width: min(92%, 640px);
+}
+
+.grid-item-wwdc p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0 0 22px;
+}
+
+.grid-item-wwdc .grid-item-link-pill {
+  background: #0071e3;
+  border-color: #0071e3;
+  color: #fff;
+}
+
+.grid-item-airpods {
+  background: #f5f5f7;
+}
+
+.grid-item-airpods .grid-item-image {
+  top: 10px;
+  left: 50%;
+  width: 96%;
+  height: 90%;
+  object-fit: contain;
+  object-position: center top;
+  transform: translateX(-50%) scale(1.2);
+  transform-origin: center top;
+}
+
+.grid-item-airpods .grid-item-content {
+  position: absolute;
+  left: 50%;
+  bottom: 60px;
+  transform: translateX(-50%);
+  width: min(86%, 560px);
+}
+
+.grid-item-airpods h2 {
+  color: #1d1d1f;
+  font-size: 50px;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin-bottom: 2px;
+}
+
+.grid-item-airpods p {
+  color: #1d1d1f;
+  font-size: 22px;
+  line-height: 1.12;
+  margin: 0 0 6px;
+}
+
+.grid-item-airpods .grid-item-note {
+  margin: 0 0 14px;
+}
+
+.grid-item-watch {
+  background: #f5f5f7;
+}
+
+.grid-item-watch .grid-item-content {
+  position: absolute;
+  top: 128px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(92%, 700px);
+}
+
+.grid-item-watch h2 {
+  color: #1d1d1f;
+  font-size: 42px;
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  margin-bottom: 6px;
+}
+
+.grid-item-watch p {
+  color: #1d1d1f;
+  font-size: 20px;
+  line-height: 1.14;
+  margin: 0 0 12px;
+}
+
+.grid-item-watch .grid-item-image {
+  top: auto;
+  bottom: 8px;
+  left: 50%;
+  width: 136%;
+  height: 68%;
+  transform: translateX(-50%);
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.grid-item-tradein {
+  background: #f5f5f7;
+}
+
+.grid-item-tradein .grid-item-content {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(74%, 540px);
+}
+
+.grid-item-tradein h2 {
+  font-size: 54px;
+  line-height: 1.08;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.grid-item-tradein p {
+  font-size: 20px;
+  line-height: 1.22;
+  color: #1d1d1f;
+  margin: 0 0 18px;
+}
+
+.grid-item-tradein .grid-item-image {
+  top: auto;
+  bottom: 0;
+  left: 50%;
+  width: 118%;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.grid-item-card {
+  background: #f5f5f7;
+}
+
+.grid-item-card .grid-item-content {
+  position: absolute;
+  top: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(72%, 560px);
+}
+
+.grid-item-card h2 {
+  font-size: 56px;
+  line-height: 1.08;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
+}
+
+.grid-item-card p {
+  font-size: 20px;
+  line-height: 1.22;
+  color: #1d1d1f;
+  margin: 0 0 18px;
+}
+
+.grid-item-card .grid-item-image {
+  top: auto;
+  bottom: 10px;
+  left: 50%;
+  width: 82%;
+  height: 100%;
+  transform: translateX(-50%);
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .grid-item {
+    height: 520px;
+    padding: 28px 18px;
+  }
+
+  .grid-item h2 {
+    font-size: 24px;
+  }
+
+  .grid-item p {
+    font-size: 14px;
+  }
+
+  .grid-item-link-pill {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  .grid-item-note {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .grid-item-apple50 h2 {
+    font-size: 42px;
+  }
+
+  .grid-item-apple50 p {
+    font-size: 46px;
+    margin-bottom: 16px;
+  }
+
+  .grid-item-wwdc p {
+    font-size: 26px;
+    margin-bottom: 16px;
+  }
+
+  .grid-item-airpods .grid-item-content,
+  .grid-item-watch .grid-item-content {
+    width: 94%;
+  }
+
+  .grid-item-airpods h2,
+  .grid-item-watch h2 {
+    font-size: 36px;
+  }
+
+  .grid-item-airpods p,
+  .grid-item-watch p {
+    font-size: 20px;
+  }
+
+  .grid-item-airpods .grid-item-content {
+    bottom: 38px;
+  }
+
+  .grid-item-airpods .grid-item-image {
+    width: 98%;
+    height: 56%;
+    transform: translateX(-50%) scale(1.14);
+  }
+
+  .grid-item-watch .grid-item-content {
+    top: 98px;
+  }
+
+  .grid-item-watch .grid-item-image {
+    width: 146%;
+    height: 64%;
+  }
+
+  .grid-item-tradein .grid-item-content,
+  .grid-item-card .grid-item-content {
+    top: 34px;
+    width: 88%;
+  }
+
+  .grid-item-tradein h2,
+  .grid-item-card h2 {
+    font-size: 36px;
+  }
+
+  .grid-item-tradein p,
+  .grid-item-card p {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .grid-item-tradein .grid-item-image {
+    width: 126%;
+    height: 60%;
+  }
+
+  .grid-item-card .grid-item-image {
+    width: 88%;
+    height: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-item {
+    height: 420px;
+    padding: 20px 14px;
+  }
+
+  .grid-item h2 {
+    font-size: 20px;
+  }
+
+  .grid-item p {
+    font-size: 13px;
+  }
+
+  .grid-item-link {
+    font-size: 12px;
+  }
+
+  .grid-item-link-pill {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+
+  .grid-item-note {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+
+  .grid-item-apple50 .grid-item-content {
+    bottom: 18px;
+  }
+
+  .grid-item-apple50 h2 {
+    font-size: 30px;
+    margin-bottom: 4px;
+  }
+
+  .grid-item-apple50 p {
+    font-size: 34px;
+    margin-bottom: 12px;
+  }
+
+  .grid-item-wwdc .grid-item-content {
+    bottom: 20px;
+    width: 94%;
+  }
+
+  .grid-item-wwdc p {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .grid-item-airpods h2,
+  .grid-item-watch h2 {
+    font-size: 30px;
+  }
+
+  .grid-item-airpods p,
+  .grid-item-watch p {
+    font-size: 16px;
+  }
+
+  .grid-item-airpods .grid-item-image {
+    width: 102%;
+    height: 58%;
+    transform: translateX(-50%) scale(1.08);
+  }
+
+  .grid-item-airpods .grid-item-content {
+    bottom: 26px;
+  }
+
+  .grid-item-watch .grid-item-image {
+    width: 154%;
+    height: 62%;
+  }
+
+  .grid-item-watch .grid-item-content {
+    top: 68px;
+  }
+
+  .grid-item-tradein .grid-item-content,
+  .grid-item-card .grid-item-content {
+    top: 22px;
+    width: 94%;
+  }
+
+  .grid-item-tradein h2,
+  .grid-item-card h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+  }
+
+  .grid-item-tradein p,
+  .grid-item-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .grid-item-tradein .grid-item-image {
+    width: 138%;
+    height: 58%;
+  }
+
+  .grid-item-card .grid-item-image {
+    width: 96%;
+    height: 48%;
+  }
+}

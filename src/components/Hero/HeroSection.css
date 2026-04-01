@@ -1,0 +1,430 @@
+/* 
+  Base Shared Hero Styles
+ */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 500px;
+  padding: 18px 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.hero + .hero {
+  border-top: 3px solid #fff;
+}
+
+.hero-light {
+  background: #f5f5f7;
+}
+
+.hero-sky {
+  background: linear-gradient(180deg, #8dc7e0 0%, #d9edf8 58%, #f3f8fb 100%);
+}
+
+.hero-content {
+  z-index: 2;
+  width: 100%;
+  text-align: center;
+  padding-top: 2px;
+}
+
+.hero-title {
+  margin: 0;
+  color: #1d1d1f;
+  font-weight: 600;
+  font-size: clamp(32px, 4.2vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+  margin: 2px 0 0;
+  color: #1d1d1f;
+  font-size: clamp(16px, 1.4vw, 20px);
+  line-height: 1.25;
+}
+
+.hero-air-word {
+  color: #2c73d5;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hero-links a {
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1;
+  padding: 8px 14px;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.btn-primary {
+  background: #0071e3;
+  color: #fff;
+  border: 1px solid #0071e3;
+}
+
+.btn-outline {
+  border: 1px solid #0071e3;
+  color: #0071e3;
+  background: transparent;
+}
+
+.hero-links a:hover {
+  opacity: 0.86;
+}
+
+.hero-image {
+  display: block;
+  width: min(100%, 680px);
+  max-height: 360px;
+  object-fit: contain;
+  object-position: center bottom;
+  margin-top: auto;
+}
+
+/* =========================
+   iPhone Hero (Primary)
+   ========================= */
+.hero-primary {
+  min-height: 692px;
+  padding-top: 56px;
+}
+
+.hero-primary .hero-content {
+  padding-top: 0;
+}
+
+.hero-primary .hero-title {
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+}
+
+.hero-primary .hero-subtitle {
+  margin-top: 6px;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.hero-primary .hero-links {
+  margin-top: 16px;
+  gap: 14px;
+}
+
+.hero-primary .hero-links a {
+  font-size: 21px;
+  padding: 11px 21px;
+  border-width: 1px;
+}
+
+.hero-primary .hero-image {
+  width: min(100%, 1140px);
+  max-height: 500px;
+}
+
+.hero-iphone .hero-image {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(100%, 1180px);
+  max-height: 600px;
+  transform: translate(-50%, -72px);
+  transform-origin: center bottom;
+}
+
+/* =========================
+   Overlay Hero Base
+   Used by MacBook + iPad
+   ========================= */
+.hero-overlay .hero-content {
+  position: absolute;
+  top: 46px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 14px;
+}
+
+.hero-overlay .hero-image {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+
+.hero-overlay {
+  min-height: 680px;
+}
+
+.hero-overlay .hero-title {
+  font-size: 56px;
+  line-height: 1.07;
+  letter-spacing: -0.01em;
+}
+
+.hero-overlay .hero-subtitle {
+  margin-top: 8px;
+  font-size: 28px;
+  line-height: 1.12;
+}
+
+.hero-overlay .hero-links {
+  margin-top: 16px;
+  gap: 12px;
+}
+
+.hero-overlay .hero-links a {
+  font-size: 21px;
+  padding: 11px 21px;
+}
+
+.hero-overlay .hero-image {
+  width: min(100%, 1120px);
+  max-height: 520px;
+}
+
+/* MacBook specific rules */
+.hero-macbook .hero-image {
+  width: min(100%, 1080px);
+  max-height: 100%;
+}
+
+.hero-macbook {
+  min-height: 680px;
+}
+
+/* iPad specific rules */
+.hero-ipad .hero-image {
+  width: 100vw;
+  max-width: none;
+  max-height: 640px;
+  bottom: 0;
+}
+
+.hero-ipad {
+  min-height: 640px;
+}
+
+.hero-ipad .hero-content {
+  top: 52px;
+}
+
+/* =========================
+   Tablet
+   ========================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 390px;
+    padding: 14px 12px 0;
+  }
+
+  .hero-title {
+    font-size: clamp(28px, 7.8vw, 34px);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(14px, 3.5vw, 16px);
+  }
+
+  .hero-image {
+    width: min(100%, 520px);
+    max-height: 290px;
+  }
+
+  .hero-primary {
+    min-height: 520px;
+    padding-top: 30px;
+  }
+
+  .hero-primary .hero-title {
+    font-size: clamp(34px, 8vw, 48px);
+  }
+
+  .hero-primary .hero-subtitle {
+    font-size: clamp(16px, 3.7vw, 22px);
+  }
+
+  .hero-primary .hero-links {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .hero-primary .hero-links a {
+    font-size: clamp(13px, 2.4vw, 16px);
+    padding: 10px 18px;
+    border-width: 1px;
+  }
+
+  .hero-primary .hero-image {
+    width: min(100%, 760px);
+    max-height: 380px;
+  }
+
+  .hero-iphone .hero-image {
+    width: min(100%, 820px);
+    max-height: 430px;
+    transform: translate(-50%, -38px);
+  }
+
+  .hero-overlay .hero-content {
+    top: 26px;
+  }
+
+  .hero-overlay {
+    min-height: 560px;
+  }
+
+  .hero-overlay .hero-title {
+    font-size: clamp(34px, 8vw, 48px);
+  }
+
+  .hero-overlay .hero-subtitle {
+    font-size: clamp(16px, 3.7vw, 22px);
+  }
+
+  .hero-overlay .hero-links a {
+    font-size: clamp(13px, 2.4vw, 16px);
+    padding: 10px 18px;
+  }
+
+  .hero-overlay .hero-image {
+    width: min(100%, 820px);
+    max-height: 430px;
+  }
+
+  .hero-macbook .hero-image {
+    width: min(100%, 780px);
+    max-height: 400px;
+  }
+
+  .hero-macbook {
+    min-height: 560px;
+  }
+
+  .hero-ipad .hero-image {
+    width: 100vw;
+    max-width: none;
+    max-height: 500px;
+    bottom: 0px;
+  }
+
+  .hero-ipad {
+    min-height: 560px;
+  }
+
+  .hero-ipad .hero-content {
+    top: 34px;
+  }
+}
+
+/* =========================
+   Mobile
+   ========================= */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 340px;
+  }
+
+  .hero-links {
+    gap: 6px;
+  }
+
+  .hero-links a {
+    font-size: 11px;
+    padding: 7px 12px;
+  }
+
+  .hero-image {
+    width: min(100%, 390px);
+    max-height: 225px;
+  }
+
+  .hero-primary {
+    min-height: 460px;
+    padding-top: 26px;
+  }
+
+  .hero-primary .hero-title {
+    font-size: clamp(34px, 12vw, 44px);
+  }
+
+  .hero-primary .hero-subtitle {
+    font-size: clamp(18px, 5.5vw, 22px);
+  }
+
+  .hero-primary .hero-image {
+    width: min(100%, 470px);
+    max-height: 300px;
+  }
+
+  .hero-iphone .hero-image {
+    width: min(100%, 520px);
+    max-height: 320px;
+    transform: translate(-50%, -22px);
+  }
+
+  .hero-overlay .hero-content {
+    top: 10px;
+    padding: 0 10px;
+  }
+
+  .hero-overlay {
+    min-height: 490px;
+  }
+
+  .hero-overlay .hero-title {
+    font-size: clamp(32px, 11vw, 42px);
+  }
+
+  .hero-overlay .hero-subtitle {
+    font-size: clamp(17px, 5.3vw, 21px);
+  }
+
+  .hero-overlay .hero-image {
+    width: min(100%, 520px);
+    max-height: 330px;
+  }
+
+  .hero-macbook .hero-image {
+    width: min(100%, 470px);
+    max-height: 300px;
+  }
+
+  .hero-macbook {
+    min-height: 490px;
+  }
+
+  .hero-ipad .hero-image {
+    width: 100vw;
+    max-width: none;
+    max-height: 350px;
+    bottom: 0;
+  }
+
+  .hero-ipad {
+    min-height: 430px;
+  }
+
+  .hero-ipad .hero-content {
+    top: 20px;
+  }
+}
