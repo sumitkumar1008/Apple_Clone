@@ -51,6 +51,8 @@ export default function Grid() {
         variant="tradein"
         ctaText="Get your estimate"
         ctaMode="pill"
+        imageFirst
+        buttonBeforeDescription
       />
 
       <GridItem
@@ -61,6 +63,8 @@ export default function Grid() {
         ctaText="Learn more"
         secondaryCtaText="Apply now"
         ctaMode="pill"
+        imageFirst
+        buttonBeforeDescription
       />
     </section>
   );

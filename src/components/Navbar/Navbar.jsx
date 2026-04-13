@@ -1,6 +1,8 @@
+import { useEffect, useState } from 'react';
 import './Navbar.css';
 
 export default function Navbar() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const appleLogoSrc = 'https://res.cloudinary.com/drxoionjq/image/upload/v1775068245/apple-logo_den5de.png';
   const hamburgerIconSrc = 'https://res.cloudinary.com/drxoionjq/image/upload/q_auto/f_auto/v1775068244/hamburger_puidic.png';
   const searchIconSrc = 'https://res.cloudinary.com/drxoionjq/image/upload/q_auto/f_auto/v1775068245/search_axp0eh.png';
@@ -79,6 +81,32 @@ export default function Navbar() {
     },
   ];
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return undefined;
+    }
+
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('keydown', handleEscape);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [isMobileMenuOpen]);
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -151,10 +179,31 @@ export default function Navbar() {
           <a href="#" className="navbar-icon" aria-label="Bag">
             <img src={bagIconSrc} alt="Bag" className="navbar-icon-image navbar-icon-bag" />
           </a>
-          <button type="button" className="navbar-hamburger" aria-label="Open navigation menu">
+          <button
+            type="button"
+            className="navbar-hamburger"
+            aria-label="Open navigation menu"
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-categories"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          >
             <img src={hamburgerIconSrc} alt="" className="navbar-hamburger-image" />
           </button>
         </div>
+      </div>
+
+      <div
+        id="mobile-categories"
+        className={`navbar-mobile-menu ${isMobileMenuOpen ? 'navbar-mobile-menu--open' : ''}`}
+      >
+        <p className="navbar-mobile-menu-title">Product Categories</p>
+        <ul className="navbar-mobile-category-list">
+          {navItems.map((item) => (
+            <li key={item.label}>
+              <a href="#" onClick={() => setIsMobileMenuOpen(false)}>{item.label}</a>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
